@@ -1,18 +1,40 @@
 package co.dtupai.qa.dtupaiscreenplay.models;
 
 public class Productos {
-	private String product;
-
-	public Productos(String product) {
-		this.product = product;
+	private int posicionTalla;
+	private int posicionColor;
+	private int cantidad;
+	
+	public Productos(int posicionTalla, int posicionColor, int cantidad) {
+		super();
+		this.posicionTalla = posicionTalla;
+		this.posicionColor = posicionColor;
+		this.cantidad = cantidad;
 	}
 
-	public String getProducto() {
-		return product;
+	public int getPosicionTalla() {
+		return posicionTalla;
 	}
 
-	public void setProducto(String producto) {
-		this.product = producto;
+	public void setPosicionTalla(int posicionTalla) {
+		this.posicionTalla = posicionTalla;
 	}
+
+	public int getPosicionColor() {
+		return posicionColor;
+	}
+
+	public void setPosicionColor(int posicionColor) {
+		this.posicionColor = posicionColor;
+	}
+
+	public int getCantidad() {
+		return cantidad;
+	}
+
+	public void setCantidad(int cantidad) {
+		this.cantidad = cantidad;
+	}
+
 	
 }
