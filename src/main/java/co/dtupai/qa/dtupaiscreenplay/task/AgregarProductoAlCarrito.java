@@ -1,5 +1,6 @@
 package co.dtupai.qa.dtupaiscreenplay.task;
 
+import co.dtupai.qa.dtupaiscreenplay.interactions.AgregarAlCarrito;
 import co.dtupai.qa.dtupaiscreenplay.models.Productos;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -18,12 +19,14 @@ import org.openqa.selenium.Keys;
 
 public class AgregarProductoAlCarrito implements Task {
 
+	public Productos productos;
 	public int posicionTalla;
 	public int posicionColor;
 	public String cantidad;
 
 	public AgregarProductoAlCarrito(Productos productos) {
 		super();
+		this.productos = productos;
 		this.posicionTalla = productos.getPosicionTalla();
 		this.posicionColor = productos.getPosicionColor();
 		this.cantidad = Integer.toString(productos.getCantidad());
@@ -34,10 +37,11 @@ public class AgregarProductoAlCarrito implements Task {
 	public <T extends Actor> void performAs(T actor) {
 		// TODO Auto-generated method stub
 		actor.attemptsTo(
-				Click.on(listSizes.get(posicionTalla)),
-				Click.on(listColors.get(posicionColor)),
-				Enter.theValue(cantidad).into(INPUT_QUANTITY).thenHit(Keys.ENTER),
-				Click.on(ADD_BUTTON)
+				//Click.on(listSizes.get(posicionTalla)),
+				//Click.on(listColors.get(posicionColor)),
+				//Enter.theValue(cantidad).into(INPUT_QUANTITY).thenHit(Keys.ENTER),
+				AgregarAlCarrito.seleccionarCaracteristicasDelProducto(productos)
+				//Click.on(ADD_BUTTON)
 			);
 	}
 

@@ -1,5 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="A�ardir producto al carrito de compras" skipped="0" tests="1" time="39.84" timestamp="2019-04-07 08:40:29"><testcase name="A�ardir producto al carrito de compras"><failure message="Expected enabled element was not enabled" type="net.thucydides.core.webdriver.exceptions.ElementShouldBeEnabledException">Expected enabled element was not enabled</failure><system-err>Expected enabled element was not enabled&#13;
-co.dtupai.qa.dtupaiscreenplay.task.AgregarProductoAlCarrito.performAs(AgregarProductoAlCarrito.java:34)&#13;
-co.dtupai.qa.dtupaiscreenplay.stepsdefinitions.AñadirAlCarritoStepsDefinitions.danielAgregaElProductoAlCarritoConLasCaracteristicas(AñadirAlCarritoStepsDefinitions.java:49)&#13;
-cucumber.runner.Runner.runPickle(Runner.java:80)&#13;
-</system-err></testcase></testsuite>
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="A�ardir producto al carrito de compras" skipped="0" tests="1" time="26.99" timestamp="2019-04-08 08:19:14"><testcase name="A�ardir producto al carrito de compras"/></testsuite>
