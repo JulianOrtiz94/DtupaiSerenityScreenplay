@@ -11,6 +11,10 @@ public class ElementoSeleccionado implements Question<String> {
 		return DtupaiResultPage.PRODUCT_NAME.resolveFor(actor).waitUntilVisible().getText().toString();
 	}
 
+	/**
+	 * Metodo estatico que inicializa una nueva instancia de la clase ElementoSeleccionado
+	 * @return La nueva instancia de la clase ElementoSeleccionado
+	 */
 	public static ElementoSeleccionado resultado() {
 		return new ElementoSeleccionado();
 	}

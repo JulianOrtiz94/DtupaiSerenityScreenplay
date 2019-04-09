@@ -45,6 +45,12 @@ public class AgregarProductoAlCarrito implements Task {
 			);
 	}
 
+	/**
+	 * Retorna la clase AgregarProductoAlCarrito para ser inicializada en el tiempo de ejecución
+	 * El parametro unicamente puede ser de tipo Productos
+	 * @param productos el producto seleccionado al momento de ejecutar el metodo
+	 * @return Retorna la inicialización de la clase AgregarProductoAlCarrito en tiempo de ejecución, enviandole el parametro productos
+	 */
 	public static AgregarProductoAlCarrito conLasCaracteristicas(Productos productos) {
 		// TODO Auto-generated method stub
 		return instrumented(AgregarProductoAlCarrito.class, productos);

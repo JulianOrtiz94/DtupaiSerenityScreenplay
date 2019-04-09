@@ -28,7 +28,13 @@ public class BuscarProducto implements Task{
 					Enter.theValue(producto).into(INPUT_SEARCH).thenHit(Keys.ENTER)
 				);
 	}
-
+	
+	/**
+	 * Retorna la clase BuscarProducto para ser inicializada en el tiempo de ejecución
+	 * El parametro unicamente puede ser de tipo String
+	 * @param producto el producto seleccionado al momento de ejecutar el metodo
+	 * @return Retorna la inicialización de la clase BuscarProducto en tiempo de ejecución, enviandole el parametro producto
+	 */
 	public static BuscarProducto conElNombre(String producto) {
 		return instrumented(BuscarProducto.class, producto);
 	}

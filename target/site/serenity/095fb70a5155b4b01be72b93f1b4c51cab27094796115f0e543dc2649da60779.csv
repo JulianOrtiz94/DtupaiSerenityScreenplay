@@ -1,4 +1,4 @@
 "Story","Title","Result","Date","Stability","Duration (s)"
-"A�ardir producto al carrito de compras","A�ardir producto al carrito de compras","SUCCESS","2019-04-09T15:14:49.0693038-05:00[America/Bogota]","0.0","30.68"
-"Buscar Producto","Buscar un producto","SUCCESS","2019-04-09T15:15:19.7558658-05:00[America/Bogota]","0.0","15.21"
-"Seleccionar un producto","Seleccionar un producto de la lista de resultados","FAILURE","2019-04-09T15:15:34.9696358-05:00[America/Bogota]","0.0","24.52"
+"A�ardir producto al carrito de compras","A�ardir producto al carrito de compras","SUCCESS","2019-04-09T15:34:15.1478377-05:00[America/Bogota]","0.0","34.49"
+"Buscar Producto","Buscar un producto","SUCCESS","2019-04-09T15:34:49.6435241-05:00[America/Bogota]","0.0","16.04"
+"Seleccionar un producto","Seleccionar un producto de la lista de resultados","FAILURE","2019-04-09T15:35:05.6832625-05:00[America/Bogota]","0.0","26.99"

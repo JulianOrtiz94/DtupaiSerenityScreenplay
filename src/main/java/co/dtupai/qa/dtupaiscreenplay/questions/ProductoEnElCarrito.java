@@ -12,6 +12,11 @@ public class ProductoEnElCarrito implements Question<String>{
 		return DtupaiShoppingCartPage.TEXT_PRICE.resolveFor(actor).waitUntilVisible().getText();
 	}
 
+	
+	/**
+	 * Metodo estatico que inicializa una nueva instancia de la clase ProductoEnElCarrito
+	 * @return La nueva instancia de la clase ProductoEnElCarrito
+	 */
 	public static ProductoEnElCarrito conPrecio () {
 		return new ProductoEnElCarrito();
 	}

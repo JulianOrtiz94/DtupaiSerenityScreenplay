@@ -12,6 +12,11 @@ public class ResultadoBusqueda implements Question<String> {
 		return DtupaiResultPage.TEXT_SEARCH.resolveFor(actor).waitUntilVisible().getText();
 	}
 	
+	
+	/**
+	 * Metodo estatico que inicializa una nueva instancia de la clase ResultadoBusqueda
+	 * @return La nueva instancia de la clase ResultadoBusqueda
+	 */
 	public static ResultadoBusqueda busqueda() {
 		return new ResultadoBusqueda();
 	}

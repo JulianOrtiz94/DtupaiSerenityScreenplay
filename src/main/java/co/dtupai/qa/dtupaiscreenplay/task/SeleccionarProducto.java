@@ -26,6 +26,12 @@ public class SeleccionarProducto implements Task{
 		
 	}
 
+	/**
+	 * Retorna la clase SeleccionarProducto para ser inicializada en el tiempo de ejecución
+	 * El parametro unicamente puede ser de tipo Integer
+	 * @param posicion La posicion del producto en la lista de resultados
+	 * @return Retorna la inicialización de la clase SeleccionarProducto en tiempo de ejecución, enviandole el parametro posicion
+	 */
 	public static SeleccionarProducto enLaPosicion(int posicion) {
 		return instrumented(SeleccionarProducto.class, posicion);
 	}

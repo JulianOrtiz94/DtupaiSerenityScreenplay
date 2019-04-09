@@ -7,14 +7,13 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
-
-public class AgregarAlCarrito implements Interaction{
+public class AgregarAlCarrito implements Interaction {
 	public int posicionTalla;
 	public int posicionColor;
 	public String cantidad;
 	public WebElementFacade size;
 	public WebElementFacade color;
-	
+
 	public AgregarAlCarrito(Productos productos) {
 		super();
 		this.posicionTalla = productos.getPosicionTalla();
@@ -32,10 +31,18 @@ public class AgregarAlCarrito implements Interaction{
 		DtupaiDetailProductPage.INPUT_QUANTITY.resolveFor(actor).clear();
 		DtupaiDetailProductPage.INPUT_QUANTITY.resolveFor(actor).sendKeys(cantidad);
 		DtupaiDetailProductPage.INPUT_QUANTITY.resolveFor(actor).submit();
-		//DtupaiDetailProductPage.ADD_BUTTON.resolveFor(actor).waitUntilEnabled().waitUntilClickable().click();
-		
+		// DtupaiDetailProductPage.ADD_BUTTON.resolveFor(actor).waitUntilEnabled().waitUntilClickable().click();
+
 	}
-	
+
+	/**
+	 * Este metodo retorna la clase AgregarAlCarrito para ser inicializada en el
+	 * tiempo de ejecución Recibe un parametro de tipo Productos
+	 * 
+	 * @param productos el producto seleccionado al momento de ejecutar el metodo
+	 * @return Retorna la inicialización de la clase AgregarAlCarrito en tiempo de
+	 *         ejecución
+	 */
 	public static AgregarAlCarrito seleccionarCaracteristicasDelProducto(Productos productos) {
 		return instrumented(AgregarAlCarrito.class, productos);
 	}
