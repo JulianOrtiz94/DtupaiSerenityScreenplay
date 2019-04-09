@@ -29,6 +29,7 @@ public class AgregarAlCarrito implements Interaction{
 		// TODO Auto-generated method stub
 		size.waitUntilClickable().click();
 		color.waitUntilClickable().click();
+		DtupaiDetailProductPage.INPUT_QUANTITY.resolveFor(actor).clear();
 		DtupaiDetailProductPage.INPUT_QUANTITY.resolveFor(actor).sendKeys(cantidad);
 		DtupaiDetailProductPage.INPUT_QUANTITY.resolveFor(actor).submit();
 		//DtupaiDetailProductPage.ADD_BUTTON.resolveFor(actor).waitUntilEnabled().waitUntilClickable().click();

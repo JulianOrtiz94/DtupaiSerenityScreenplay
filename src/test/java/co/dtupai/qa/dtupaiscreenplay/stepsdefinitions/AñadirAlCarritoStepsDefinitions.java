@@ -13,11 +13,17 @@ import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 
+import co.dtupai.qa.dtupaiscreenplay.exceptions.PrecioNoCoincide;
 import co.dtupai.qa.dtupaiscreenplay.models.Productos;
+import co.dtupai.qa.dtupaiscreenplay.questions.ProductoEnElCarrito;
 import co.dtupai.qa.dtupaiscreenplay.task.AgregarProductoAlCarrito;
 import co.dtupai.qa.dtupaiscreenplay.task.SeleccionarProducto;
 import co.dtupai.qa.dtupaiscreenplay.userinterfaces.DtupaiDetailProductPage;
 import co.dtupai.qa.dtupaiscreenplay.userinterfaces.DtupaiResultPage;
+
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static org.hamcrest.core.Is.is;
+import static org.hamcrest.CoreMatchers.containsString;
 
 public class AñadirAlCarritoStepsDefinitions {
 	
@@ -40,7 +46,7 @@ public class AñadirAlCarritoStepsDefinitions {
 				);
 	}
 
-	@When("^Daniel agrega el producto al carrito con las caracteristicas$")
+	@When("^el agrega el producto al carrito con las caracteristicas$")
 	public void danielAgregaElProductoAlCarritoConLasCaracteristicas(List<Productos> productos) throws Exception {
 		// Write code here that turns the phrase above into concrete actions
 		// For automatic transformation, change DataTable to one of
@@ -49,9 +55,9 @@ public class AñadirAlCarritoStepsDefinitions {
 		daniel.attemptsTo(AgregarProductoAlCarrito.conLasCaracteristicas(productos.get(0)));
 	}
 
-	@Then("^Daniel verifica que el precio \"([^\"]*)\" corresponde al del carrito de compras$")
-	public void danielVerificaQueElPrecioCorrespondeAlDelCarritoDeCompras(String arg1) throws Exception {
+	@Then("^el verifica que el precio \"([^\"]*)\" corresponde al del carrito de compras$")
+	public void danielVerificaQueElPrecioCorrespondeAlDelCarritoDeCompras(String precio) throws Exception {
 		// Write code here that turns the phrase above into concrete actions
-
+		daniel.should(seeThat(ProductoEnElCarrito.conPrecio(), containsString(precio)).orComplainWith(PrecioNoCoincide.class, PrecioNoCoincide.PRECIO_NO_COINCIDE));
 	}
 }

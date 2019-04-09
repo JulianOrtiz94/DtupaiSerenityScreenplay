@@ -40,14 +40,14 @@ public class BuscarProductoStepDefinition {
 		daniel.wasAbleTo(Open.browserOn(dtupaiHomePage));
 	}
 	
-	@When("^Daniel busca un producto \"([^\"]*)\"$")
+	@When("^el busca un producto \"([^\"]*)\"$")
 	public void danielBuscaUnProducto(String producto) throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
 		daniel.attemptsTo(BuscarProducto.conElNombre(producto));
 	}
 
 
-	@Then("^Daniel verifica que el podructo \"([^\"]*)\" este en los resultados$")
+	@Then("^el verifica que el podructo \"([^\"]*)\" este en los resultados$")
 	public void danielVerificaQueElPodructoEsteEnLosResultados(String resultadoEsperado) throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
 		daniel.should(seeThat(ResultadoBusqueda.busqueda(), is(resultadoEsperado)).orComplainWith(ProductoNoEncontrado.class, ProductoNoEncontrado.PRODUCTO_NO_ENCONTRADO));
