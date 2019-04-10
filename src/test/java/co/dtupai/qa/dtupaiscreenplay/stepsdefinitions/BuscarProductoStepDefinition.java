@@ -29,30 +29,30 @@ public class BuscarProductoStepDefinition {
 	private WebDriver hisBrowser;
 	private Actor daniel = Actor.named("Daniel");
 	private DtupaiHomePage dtupaiHomePage;
-	private Highlight hl ;
+	private Highlight highlight ;
 	@Before
 	public void actorCanBrowseTheWeb() {
 		daniel.can(BrowseTheWeb.with(hisBrowser));
-		hl = new Highlight(hisBrowser);
+		highlight = new Highlight(hisBrowser);
 	}
 
 	@Given("^Daniel esta en la pagina principal de Dtupai$")
 	public void danielEstaEnLaPaginaPrincipalDeDtupai() throws Exception {
-		// Write code here that turns the phrase above into concrete actions
+		
 		daniel.wasAbleTo(Open.browserOn(dtupaiHomePage));
 	}
 	
 	@When("^el busca un producto \"([^\"]*)\"$")
 	public void danielBuscaUnProducto(String producto) throws Exception {
-	    // Write code here that turns the phrase above into concrete actions
-		hl.highlightTarget(DtupaiHomePage.INPUT_SEARCH);
+	    
+		highlight.highlightTarget(DtupaiHomePage.INPUT_SEARCH);
 		daniel.attemptsTo(BuscarProducto.conElNombre(producto));
 	}
 
 
 	@Then("^el verifica que el podructo \"([^\"]*)\" este en los resultados$")
 	public void danielVerificaQueElPodructoEsteEnLosResultados(String resultadoEsperado) throws Exception {
-	    // Write code here that turns the phrase above into concrete actions
+		
 		daniel.should(seeThat(ResultadoBusqueda.busqueda(), is(resultadoEsperado)).orComplainWith(ProductoNoEncontrado.class, ProductoNoEncontrado.PRODUCTO_NO_ENCONTRADO));
 	}
 

@@ -8,7 +8,6 @@ public class ResultadoBusqueda implements Question<String> {
 	
 	@Override
 	public String answeredBy(Actor actor) {
-		// TODO Auto-generated method stub
 		return DtupaiResultPage.TEXT_SEARCH.resolveFor(actor).waitUntilVisible().getText();
 	}
 	

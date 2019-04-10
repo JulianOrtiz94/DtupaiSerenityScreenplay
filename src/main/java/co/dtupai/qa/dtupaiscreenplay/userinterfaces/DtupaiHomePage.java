@@ -1,7 +1,5 @@
 package co.dtupai.qa.dtupaiscreenplay.userinterfaces;
 
-import org.openqa.selenium.By;
-
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.screenplay.targets.Target;
 import net.thucydides.core.annotations.DefaultUrl;

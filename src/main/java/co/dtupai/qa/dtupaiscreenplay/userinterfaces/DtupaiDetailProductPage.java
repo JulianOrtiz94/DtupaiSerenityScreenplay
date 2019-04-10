@@ -2,13 +2,10 @@ package co.dtupai.qa.dtupaiscreenplay.userinterfaces;
 
 import java.util.List;
 
-import org.openqa.selenium.By;
-
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.targets.Target;
-import net.thucydides.core.annotations.DefaultUrl;
 
 
 public class DtupaiDetailProductPage extends PageObject{

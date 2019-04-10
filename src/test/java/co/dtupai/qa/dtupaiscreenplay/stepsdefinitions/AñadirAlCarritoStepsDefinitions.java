@@ -36,16 +36,15 @@ public class AñadirAlCarritoStepsDefinitions {
 	private DtupaiResultPage dtupaiResultPage ;
 	private DtupaiDetailProductPage dtupaiDetailProductPage; 
 	private DtupaiShoppingCartPage dtupaiShoppingCartPage;
-	private Highlight hl ;
+	private Highlight highlight ;
 	@Before
 	public void actorCanBrowseTheWeb() {
 		daniel.can(BrowseTheWeb.with(hisBrowser));
-		hl = new Highlight(hisBrowser);
+		highlight = new Highlight(hisBrowser);
 	}
 	
 	@Given("^Daniel selecciono el producto con la posicion \"([^\"]*)\" que desea comprar$")
 	public void danielSeleccionoElProductoConLaPosicionQueDeseaComprar(int posicionProducto) throws Exception {
-		// Write code here that turns the phrase above into concrete actions
 		daniel.wasAbleTo(Open.browserOn(dtupaiResultPage),
 				
 					SeleccionarProducto.enLaPosicion(posicionProducto)
@@ -54,15 +53,15 @@ public class AñadirAlCarritoStepsDefinitions {
 
 	@When("^el agrega el producto al carrito con las caracteristicas$")
 	public void danielAgregaElProductoAlCarritoConLasCaracteristicas(List<Productos> productos) throws Exception {
-		hl.highlightTarget(DtupaiDetailProductPage.INPUT_QUANTITY);
-		hl.highlightTarget(DtupaiDetailProductPage.ADD_BUTTON);
+		highlight.highlightTarget(DtupaiDetailProductPage.INPUT_QUANTITY);
+		highlight.highlightTarget(DtupaiDetailProductPage.ADD_BUTTON);
 		daniel.attemptsTo(AgregarProductoAlCarrito.conLasCaracteristicas(productos.get(0)));
-		hl.highlightTarget(DtupaiShoppingCartPage.TEXT_PRICE);
+		highlight.highlightTarget(DtupaiShoppingCartPage.TEXT_PRICE);
 	}
 
 	@Then("^el verifica que el precio \"([^\"]*)\" corresponde al del carrito de compras$")
 	public void danielVerificaQueElPrecioCorrespondeAlDelCarritoDeCompras(String precio) throws Exception {
-		// Write code here that turns the phrase above into concrete actions
+		
 		daniel.should(seeThat(ProductoEnElCarrito.conPrecio(), containsString(precio)).orComplainWith(PrecioNoCoincide.class, PrecioNoCoincide.PRECIO_NO_COINCIDE));
 	}
 }

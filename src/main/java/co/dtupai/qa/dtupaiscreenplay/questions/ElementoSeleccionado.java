@@ -19,5 +19,4 @@ public class ElementoSeleccionado implements Question<String> {
 		return new ElementoSeleccionado();
 	}
 
-
 }

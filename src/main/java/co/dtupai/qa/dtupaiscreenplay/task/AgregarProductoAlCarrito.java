@@ -1,10 +1,8 @@
 package co.dtupai.qa.dtupaiscreenplay.task;
 
-import co.dtupai.qa.dtupaiscreenplay.interactions.AgregarAlCarrito;
 import co.dtupai.qa.dtupaiscreenplay.models.Productos;
 import co.dtupai.qa.dtupaiscreenplay.utils.ConexionInternet;
 import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Clear;
 import net.serenitybdd.screenplay.actions.Click;
@@ -54,7 +52,6 @@ public class AgregarProductoAlCarrito implements Task {
 				
 				Check.whether(ADD_BUTTON.resolveFor(actor).waitUntilEnabled().isEnabled()).andIfSo(Click.on(ADD_BUTTON))
 
-				//AgregarAlCarrito.seleccionarCaracteristicasDelProducto(productos)
 			);
 	}
 

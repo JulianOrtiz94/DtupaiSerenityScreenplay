@@ -8,10 +8,8 @@ public class ProductoEnElCarrito implements Question<String>{
 
 	@Override
 	public String answeredBy(Actor actor) {
-		// TODO Auto-generated method stub
 		return DtupaiShoppingCartPage.TEXT_PRICE.resolveFor(actor).waitUntilVisible().getText();
 	}
-
 	
 	/**
 	 * Metodo estatico que inicializa una nueva instancia de la clase ProductoEnElCarrito
