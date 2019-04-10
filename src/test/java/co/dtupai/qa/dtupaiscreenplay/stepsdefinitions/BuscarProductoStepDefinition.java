@@ -12,6 +12,7 @@ import co.dtupai.qa.dtupaiscreenplay.models.Productos;
 import co.dtupai.qa.dtupaiscreenplay.questions.ResultadoBusqueda;
 import co.dtupai.qa.dtupaiscreenplay.task.BuscarProducto;
 import co.dtupai.qa.dtupaiscreenplay.userinterfaces.DtupaiHomePage;
+import co.dtupai.qa.dtupaiscreenplay.utils.Highlight;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -28,10 +29,11 @@ public class BuscarProductoStepDefinition {
 	private WebDriver hisBrowser;
 	private Actor daniel = Actor.named("Daniel");
 	private DtupaiHomePage dtupaiHomePage;
-
+	private Highlight hl ;
 	@Before
 	public void actorCanBrowseTheWeb() {
 		daniel.can(BrowseTheWeb.with(hisBrowser));
+		hl = new Highlight(hisBrowser);
 	}
 
 	@Given("^Daniel esta en la pagina principal de Dtupai$")
@@ -43,6 +45,7 @@ public class BuscarProductoStepDefinition {
 	@When("^el busca un producto \"([^\"]*)\"$")
 	public void danielBuscaUnProducto(String producto) throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
+		hl.highlightTarget(DtupaiHomePage.INPUT_SEARCH);
 		daniel.attemptsTo(BuscarProducto.conElNombre(producto));
 	}
 

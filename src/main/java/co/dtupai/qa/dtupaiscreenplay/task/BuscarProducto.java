@@ -8,6 +8,8 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 import org.openqa.selenium.Keys;
 
+import co.dtupai.qa.dtupaiscreenplay.utils.ConexionInternet;
+
 import static co.dtupai.qa.dtupaiscreenplay.userinterfaces.DtupaiHomePage.INPUT_SEARCH;
 
 import net.serenitybdd.screenplay.Actor;
@@ -23,7 +25,7 @@ public class BuscarProducto implements Task{
 	@Step("{0} ingresa #producto en la barra de busqueda")
 	@Override
 	public <T extends Actor> void performAs(T actor) {
-		// TODO Auto-generated method stub
+		ConexionInternet.internetConnection();
 		actor.attemptsTo(
 					Enter.theValue(producto).into(INPUT_SEARCH).thenHit(Keys.ENTER)
 				);

@@ -8,6 +8,8 @@ import net.thucydides.core.annotations.Step;
 import static co.dtupai.qa.dtupaiscreenplay.userinterfaces.DtupaiResultPage.listResults;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
+import co.dtupai.qa.dtupaiscreenplay.utils.ConexionInternet;
+
 public class SeleccionarProducto implements Task{
 	
 	public int posicion;
@@ -19,7 +21,7 @@ public class SeleccionarProducto implements Task{
 	@Step("{0} selecciona el producto de la posicion #posicion")
 	@Override
 	public <T extends Actor> void performAs(T actor) {
-		// TODO Auto-generated method stub
+		ConexionInternet.internetConnection();
 		actor.attemptsTo(
 					Click.on(listResults.get(posicion))
 				);

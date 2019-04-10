@@ -2,11 +2,14 @@ package co.dtupai.qa.dtupaiscreenplay.task;
 
 import co.dtupai.qa.dtupaiscreenplay.interactions.AgregarAlCarrito;
 import co.dtupai.qa.dtupaiscreenplay.models.Productos;
+import co.dtupai.qa.dtupaiscreenplay.utils.ConexionInternet;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.actions.Clear;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.conditions.Check;
 import net.thucydides.core.annotations.Step;
 
 import static co.dtupai.qa.dtupaiscreenplay.userinterfaces.DtupaiDetailProductPage.listSizes;
@@ -35,13 +38,23 @@ public class AgregarProductoAlCarrito implements Task {
 	@Step("{0} selecciona las caracteristicas del producto ")
 	@Override
 	public <T extends Actor> void performAs(T actor) {
-		// TODO Auto-generated method stub
+		ConexionInternet.internetConnection();
 		actor.attemptsTo(
-				//Click.on(listSizes.get(posicionTalla)),
-				//Click.on(listColors.get(posicionColor)),
-				//Enter.theValue(cantidad).into(INPUT_QUANTITY).thenHit(Keys.ENTER),
-				AgregarAlCarrito.seleccionarCaracteristicasDelProducto(productos)
-				//Click.on(ADD_BUTTON)
+				Check.whether(listSizes.get(posicionTalla).waitUntilVisible().isVisible())
+				.andIfSo(Click.on(listSizes.get(posicionTalla))),
+				
+				
+				Check.whether(listColors.get(posicionColor).waitUntilVisible().isVisible())
+				.andIfSo(Click.on(listColors.get(posicionColor))),
+				
+				Check.whether(INPUT_QUANTITY.resolveFor(actor).waitUntilVisible().isEnabled())
+					.andIfSo(Clear.field(INPUT_QUANTITY)),
+					
+				Enter.theValue(cantidad).into(INPUT_QUANTITY),
+				
+				Check.whether(ADD_BUTTON.resolveFor(actor).waitUntilEnabled().isEnabled()).andIfSo(Click.on(ADD_BUTTON))
+
+				//AgregarAlCarrito.seleccionarCaracteristicasDelProducto(productos)
 			);
 	}
 
