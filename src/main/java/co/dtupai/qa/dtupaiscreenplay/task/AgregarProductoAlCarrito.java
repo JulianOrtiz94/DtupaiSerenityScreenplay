@@ -1,5 +1,7 @@
 package co.dtupai.qa.dtupaiscreenplay.task;
 
+import co.dtupai.qa.dtupaiscreenplay.interactions.MarcarElementoTarget;
+import co.dtupai.qa.dtupaiscreenplay.interactions.MarcarElementoWebElement;
 import co.dtupai.qa.dtupaiscreenplay.models.Productos;
 import co.dtupai.qa.dtupaiscreenplay.utils.ConexionInternet;
 import net.serenitybdd.screenplay.Actor;
@@ -11,6 +13,8 @@ import net.serenitybdd.screenplay.conditions.Check;
 import net.thucydides.core.annotations.Step;
 
 import static co.dtupai.qa.dtupaiscreenplay.userinterfaces.DtupaiDetailProductPage.listSizes;
+import static co.dtupai.qa.dtupaiscreenplay.userinterfaces.DtupaiHomePage.INPUT_SEARCH;
+import static co.dtupai.qa.dtupaiscreenplay.userinterfaces.DtupaiResultPage.listResults;
 import static co.dtupai.qa.dtupaiscreenplay.userinterfaces.DtupaiDetailProductPage.listColors;
 import static co.dtupai.qa.dtupaiscreenplay.userinterfaces.DtupaiDetailProductPage.INPUT_QUANTITY;
 import static co.dtupai.qa.dtupaiscreenplay.userinterfaces.DtupaiDetailProductPage.ADD_BUTTON;
@@ -37,21 +41,34 @@ public class AgregarProductoAlCarrito implements Task {
 	@Override
 	public <T extends Actor> void performAs(T actor) {
 		ConexionInternet.internetConnection();
-		actor.attemptsTo(
+		actor.attemptsTo(				
+				
 				Check.whether(listSizes.get(posicionTalla).waitUntilVisible().isVisible())
-				.andIfSo(Click.on(listSizes.get(posicionTalla))),
+					.andIfSo(
+							MarcarElementoWebElement.marcaElElementoWebElement(listSizes.get(posicionTalla)),
+							Click.on(listSizes.get(posicionTalla))
+							),
 				
 				
 				Check.whether(listColors.get(posicionColor).waitUntilVisible().isVisible())
-				.andIfSo(Click.on(listColors.get(posicionColor))),
+					.andIfSo(
+							MarcarElementoWebElement.marcaElElementoWebElement(listColors.get(posicionColor)),
+							Click.on(listColors.get(posicionColor))
+							),
 				
 				Check.whether(INPUT_QUANTITY.resolveFor(actor).waitUntilVisible().isEnabled())
-					.andIfSo(Clear.field(INPUT_QUANTITY)),
+					.andIfSo(
+							MarcarElementoTarget.marcaElElementoTarget(INPUT_QUANTITY),
+							Clear.field(INPUT_QUANTITY)
+							),
 					
 				Enter.theValue(cantidad).into(INPUT_QUANTITY),
 				
-				Check.whether(ADD_BUTTON.resolveFor(actor).waitUntilEnabled().isEnabled()).andIfSo(Click.on(ADD_BUTTON))
-
+				Check.whether(ADD_BUTTON.resolveFor(actor).waitUntilEnabled().isEnabled())
+					.andIfSo(
+							MarcarElementoTarget.marcaElElementoTarget(ADD_BUTTON),
+							Click.on(ADD_BUTTON)
+							)
 			);
 	}
 

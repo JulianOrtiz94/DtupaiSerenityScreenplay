@@ -36,11 +36,9 @@ public class AñadirAlCarritoStepsDefinitions {
 	private DtupaiResultPage dtupaiResultPage ;
 	private DtupaiDetailProductPage dtupaiDetailProductPage; 
 	private DtupaiShoppingCartPage dtupaiShoppingCartPage;
-	private Highlight highlight ;
 	@Before
 	public void actorCanBrowseTheWeb() {
 		daniel.can(BrowseTheWeb.with(hisBrowser));
-		highlight = new Highlight(hisBrowser);
 	}
 	
 	@Given("^Daniel selecciono el producto con la posicion \"([^\"]*)\" que desea comprar$")
@@ -53,15 +51,11 @@ public class AñadirAlCarritoStepsDefinitions {
 
 	@When("^el agrega el producto al carrito con las caracteristicas$")
 	public void danielAgregaElProductoAlCarritoConLasCaracteristicas(List<Productos> productos) throws Exception {
-		highlight.highlightTarget(DtupaiDetailProductPage.INPUT_QUANTITY);
-		highlight.highlightTarget(DtupaiDetailProductPage.ADD_BUTTON);
 		daniel.attemptsTo(AgregarProductoAlCarrito.conLasCaracteristicas(productos.get(0)));
-		highlight.highlightTarget(DtupaiShoppingCartPage.TEXT_PRICE);
 	}
 
 	@Then("^el verifica que el precio \"([^\"]*)\" corresponde al del carrito de compras$")
 	public void danielVerificaQueElPrecioCorrespondeAlDelCarritoDeCompras(String precio) throws Exception {
-		
 		daniel.should(seeThat(ProductoEnElCarrito.conPrecio(), containsString(precio)).orComplainWith(PrecioNoCoincide.class, PrecioNoCoincide.PRECIO_NO_COINCIDE));
 	}
 }

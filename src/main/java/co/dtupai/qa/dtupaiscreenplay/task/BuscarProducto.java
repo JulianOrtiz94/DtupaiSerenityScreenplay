@@ -8,6 +8,7 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 import org.openqa.selenium.Keys;
 
+import co.dtupai.qa.dtupaiscreenplay.interactions.MarcarElementoTarget;
 import co.dtupai.qa.dtupaiscreenplay.utils.ConexionInternet;
 
 import static co.dtupai.qa.dtupaiscreenplay.userinterfaces.DtupaiHomePage.INPUT_SEARCH;
@@ -27,6 +28,7 @@ public class BuscarProducto implements Task{
 	public <T extends Actor> void performAs(T actor) {
 		ConexionInternet.internetConnection();
 		actor.attemptsTo(
+					MarcarElementoTarget.marcaElElementoTarget(INPUT_SEARCH),
 					Enter.theValue(producto).into(INPUT_SEARCH).thenHit(Keys.ENTER)
 				);
 	}

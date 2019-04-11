@@ -40,15 +40,11 @@ public class SeleccionarProductoStepDefinition {
 
 	@When("^el seleccione el producto \"([^\"]*)\"$")
 	public void danielSeleccioneElProducto(int posicion) throws Exception {
-	   
-		highlight.highlightElement((WebElementFacade) DtupaiResultPage.listResults.get(posicion));
-		daniel.attemptsTo(SeleccionarProducto.enLaPosicion(posicion));
-		highlight.highlightTarget(DtupaiResultPage.PRODUCT_NAME);
+	    daniel.attemptsTo(SeleccionarProducto.enLaPosicion(posicion));
 	}
 
 	@Then("^el verifica que el podructo seleccionado \"([^\"]*)\" sea el correcto$")
 	public void danielVerificaQueElPodructoSeleccionadoSeaElCorrecto(String resultadoEsperado) throws Exception {
-	    
 	    daniel.should(seeThat(ElementoSeleccionado.resultado(), is(resultadoEsperado)).orComplainWith(ProductoNoCoincide.class, ProductoNoCoincide.PRODUCTO_NO_COINCIDE));
 	}
 }

@@ -8,6 +8,7 @@ import net.thucydides.core.annotations.Step;
 import static co.dtupai.qa.dtupaiscreenplay.userinterfaces.DtupaiResultPage.listResults;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
+import co.dtupai.qa.dtupaiscreenplay.interactions.MarcarElementoWebElement;
 import co.dtupai.qa.dtupaiscreenplay.utils.ConexionInternet;
 
 public class SeleccionarProducto implements Task{
@@ -23,6 +24,7 @@ public class SeleccionarProducto implements Task{
 	public <T extends Actor> void performAs(T actor) {
 		ConexionInternet.internetConnection();
 		actor.attemptsTo(
+					MarcarElementoWebElement.marcaElElementoWebElement(listResults.get(posicion)),
 					Click.on(listResults.get(posicion))
 				);
 		
