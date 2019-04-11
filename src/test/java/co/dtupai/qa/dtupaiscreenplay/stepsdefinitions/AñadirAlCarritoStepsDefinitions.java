@@ -43,9 +43,6 @@ public class AñadirAlCarritoStepsDefinitions {
 	
 	@Given("^Daniel selecciono el producto con la posicion \"([^\"]*)\" que desea comprar$")
 	public void danielSeleccionoElProductoConLaPosicionQueDeseaComprar(int posicionProducto) throws Exception {
-//		daniel.wasAbleTo(Open.browserOn(dtupaiResultPage),//				
-//					SeleccionarProducto.enLaPosicion(posicionProducto)
-//				);
 	}
 
 	@When("^el agrega el producto al carrito con las caracteristicas$")
