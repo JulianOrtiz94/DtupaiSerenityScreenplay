@@ -120,9 +120,12 @@
 
 <div class="middlecontent">
 
+
     <div id="contenttop">
         <div class="middlebg">
         <span class="breadcrumbs"><a href="index.html">Home</a>
+                > <span
+                    class="truncate-60">Tests With Error: Precio No Coincide</span>
         </span>
         </div>
         <div class="rightbg"></div>
@@ -151,14 +154,13 @@
         <div class="middlb">
             <div class="table">
 
-                <h2>Test Results: All Tests</h2>
+                <h2>Tests With Error: Precio No Coincide</h2>
                 <table class='overview'>
                     <tr>
                         <td width="375px" valign="top">
                             <div class="test-count-summary">
                                 <div class="test-count-title">
-                                1 test scenarios 
-                                    (including 1 rows of test data)
+                                0 test scenarios 
                                  |
                                     <a href="results.csv" title="Download CSV"> <i class="fa fa-download"
                                                                                     title="Download CSV"></i></a>
@@ -185,54 +187,6 @@
                                             <div class="container-fluid">
                                                 <div class="row">
                                                     <div class="col-sm-4">
-                                                            <div style="width:300px;"
-                                                                 class="chart-container automated-and-manual-results">
-                                                                <div class="ct-chart ct-square"></div>
-                                                            </div>
-                                                            <script>
-
-                                                                var labels = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '100%', ' ', ' ', ' ', ' ', ' '];
-                                                                // Our series array that contains series objects or in this case series data arrays
-
-                                                                var series = [{meta: 'Passing tests (automated)', value: 0}, {meta: 'Passing tests (manual)', value: 0}, {meta: 'Pending tests (automated)', value: 0}, {meta: 'Pending tests (manual)', value: 0}, {meta: 'Ignored tests (automated)', value: 0}, {meta: 'Ignored tests (manual)', value: 0}, {meta: 'Skipped tests (automated)', value: 0}, {meta: 'Skipped tests (manual)', value: 0}, {meta: 'Failing tests (automated)', value: 1}, {meta: 'Failing tests (manual)', value: 0}, {meta: 'Broken tests (automated)', value: 0}, {meta: 'Broken tests (manual)', value: 0}, {meta: 'Compromised tests (automated)', value: 0}, {meta: 'Compromised tests (manual)', value: 0}];
-
-                                                                // As options we currently only set a static size of 300x200 px. We can also omit this and use aspect ratio containers
-                                                                // as you saw in the previous example
-                                                                var options = {
-                                                                    width: 350,
-                                                                    height: 300
-                                                                };
-
-
-                                                                new Chartist.Pie('.ct-chart', {
-                                                                    series: series,
-                                                                    labels: labels
-                                                                }, {
-                                                                    plugins: [Chartist.plugins.tooltip()],
-                                                                    donut: true,
-                                                                    donutWidth: 60,
-                                                                    donutSolid: true,
-                                                                    startAngle: 270,
-                                                                    showLabel: true
-                                                                }, options);
-
-
-                                                                $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-                                                                    new Chartist.Pie('.ct-chart', {
-                                                                        series: series,
-                                                                        labels: labels
-                                                                    }, {
-                                                                        plugins: [Chartist.plugins.tooltip()],
-                                                                        donut: true,
-                                                                        donutWidth: 60,
-                                                                        donutSolid: true,
-                                                                        startAngle: 270,
-                                                                        showLabel: true
-                                                                    }, options);
-                                                                });
-
-
-                                                            </script>
                                                     </div>
                                                     <div class="col-sm-8">
 
@@ -277,18 +231,17 @@
                                                                 <td class="automated-stats"> </td>
                                                             </tr>
                                                             <tr>
-                                                                            <td colspan="3"><a
-                                                                                    href="b964a040ccee2192880812cc5de2c4d0075e3288c1b298b7dda0839367bb26be.html"><i
-                                                                                    class='fa fa-times failure-icon'></i>&nbsp;<em>Unsuccessful</em></a>
+                                                                            <td colspan="3"><i
+                                                                                class='fa fa-times failure-icon'></i>&nbsp;<em>Unsuccessful</em></a>
                                                                             </td>
                                                             </tr>
                                                             <tr>
-                                                                    <td class="aggregate-result-count indented-error-category">
-                                                                        <a href="da5b0c51b332adf0ef993a9f086d6a1b51a3d800248ec6ae281212092f35bd37.html"><i
-                                                                                class='fa fa-times-circle failure-icon'></i>&nbsp;Failed</a>
-                                                                    </td>
-                                                                <td class="automated-stats">1</td>
-                                                                <td class="automated-stats">100%</td>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-times-circle failure-icon'></i>&nbsp;Failed
+                                                                </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
                                                             <tr>
                                                                 <td class="aggregate-result-count indented-error-category">
                                                                     <i
@@ -306,7 +259,7 @@
                                                             </tr>
                                                             <tr class="summary-stats">
                                                                 <td class="aggregate-result-count">Total</td>
-                                                                <td class="automated-stats">1</td>
+                                                                <td class="automated-stats">0</td>
                                                                 <td class="automated-stats"></td>
                                                             </tr>
                                                             </tbody>
@@ -328,11 +281,11 @@
                                                             </thead>
                                                             <tbody>
                                                             <tr>
-                                                                <td>45s</td>
-                                                                <td>45ms</td>
-                                                                <td>45s</td>
-                                                                <td>45s</td>
-                                                                <td>45s</td>
+                                                                <td>0ms</td>
+                                                                <td>0ms</td>
+                                                                <td>0ms</td>
+                                                                <td>0ms</td>
+                                                                <td>0ms</td>
                                                             </tr>
                                                             </tbody>
                                                         </table>
@@ -356,28 +309,6 @@
                                                                     </tr>
                                                                     </thead>
                                                                     <tbody>
-                                                                        <tr>
-                                                                            <td>
-                                                                                    <a href="12980b4ef1f5d78a798fcc67a722b86c47e55dc9e4d9679139f6588ebe3f9d8f.html">A�ardir producto al carrito de compras</a>
-                                                                            </td>
-                                                                            <td>1</td>
-                                                                            <td>0%</td>
-                                                                            <td>
-                                                                                    <i class='fa fa-times-circle failure-icon ' title='FAILURE'></i>
-                                                                            </td>
-                                                                            <td>
-                                                                                <div class="progress">
-                                                                                        <div class="progress-bar"
-                                                                                             role="progressbar"
-                                                                                             style="width: 100%; background-color: #f8001f"
-                                                                                             aria-valuenow="1"
-                                                                                             title="100% failure"
-                                                                                             aria-valuemin="0"
-                                                                                             aria-valuemax="100">
-                                                                                        </div>
-                                                                                </div>
-                                                                            </td>
-                                                                        </tr>
                                                                         <tr>
                                                                             <td>
                                                                                     Seleccionar un producto
@@ -406,66 +337,26 @@
                                                                                 </div>
                                                                             </td>
                                                                         </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                    A�ardir producto al carrito de compras
+                                                                            </td>
+                                                                            <td>0</td>
+                                                                            <td>0%</td>
+                                                                            <td>
+                                                                                    <i class="fa fa-stop-circle-o pending-icon"></i>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="progress">
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
                                                                     </tbody>
                                                                 </table>
                                                     </div>
                                                 </div>
 
-                                                <div class="row">
-                                                    <div class="col-sm-6">
-                                                        <h3>Test Failure Overview</h3>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-sm-6">
-                                                        <h4>Most Frequent Failures</h4>
-                                                        <table class="table">
-                                                            <tbody>
-                                                            <tr>
-                                                                <td class="failure-color top-list-title">
-                                                                    <a href="6e141c0e548cb4bcd8d22688989e5b456e2ebfe4f25e66dad916f36905733eed.html"><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i> Precio no coincide</a>
-                                                                </td>
-                                                                <td><span
-                                                                        class="badge failure-badge">1</span>
-                                                                </td>
-                                                            </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <h4>Most Unstable Features</h4>
-                                                        <table class="table">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td class="failure-color top-list-title"><a
-                                                                            href="12980b4ef1f5d78a798fcc67a722b86c47e55dc9e4d9679139f6588ebe3f9d8f.html">A�ardir producto al carrito de compras</a>
-                                                                    </td>
-                                                                    <td><span
-                                                                            class="badge failure-badge">100%</span>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
 
-                                                <div class="row">
-                                                    <div class="col-sm-12">
-                                                        <h3>Tags</h3>
-
-                                                        <div class="card">
-                                                            <div class="card-body">
-                                                                <div>
-                                                                    <a href="676ea53bc68078a1c918836af3e7a3e9523a8f4dc008332f1f0f9bbc4295ada9.html">
-                                                                        <span class="badge"
-                                                                              style="background-color:#f8001f; margin:1em;padding:4px;"><i
-                                                                                class="fa fa-tag"></i> Tres&nbsp;&nbsp;&nbsp;1</span>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
                                         <div id="tests" class="tab-pane fade">
@@ -474,34 +365,7 @@
                                                     <div class="col-sm-12">
                                                         <h3><i class="fas fa-cogs"></i> Automated Tests</h3>
 
-                                            <table class="scenario-result-table table" id="scenario-results">
-                                                <thead>
-                                                <tr>
-                                                    <th>feature</th>
-                                                    <th class="test-name-column">Scenario</th>
-                                                    <th>Steps</th>
-                                                    <th>Start Time</th>
-                                                    <th>Duration</th>
-                                                    <th>Result</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr class="scenario-result FAILURE">
-                                                    <td>
-                                                            <a href="865ffe611dd4f6744a8912a3c74e359e169802741070ad0820dcaadc9f29e2dc.html">A�ardir producto al carrito de compras</a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="de4b72c4ea91c10a07b730132905351c985ba25ce0247512df1738b06cd32d4f.html">A�ardir producto al carrito de compras</a>
-                                                                   (1 example)
-                                                    </td>
-                                                    <td>4</td>
-                                                    <td>20:34:26</td>
-                                                    <td>00:45</td>
-                                                    <td><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i> <span
-                                                            style="display:none">FAILURE</span></td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
+                                            No automated tests were executed
 
                                                     </div>
                                                 </div>

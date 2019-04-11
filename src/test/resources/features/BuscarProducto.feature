@@ -3,11 +3,7 @@ Feature: Buscar Producto
   Daniel quiere buscar un producto
 
   @smokeTest
-  Scenario Outline: Buscar un producto
+  Scenario: Buscar un producto
     Given Daniel esta en la pagina principal de Dtupai
-    When el busca un producto "<producto>"
-    Then el verifica que el podructo "<resultadoEsperado>" este en los resultados
-
-    Examples: 
-      | producto   | resultadoEsperado |
-      | zapatillas | zapatillas        |
+    When el busca un producto "zapatillas"
+    Then el verifica que el podructo "zapatillas" este en los resultados

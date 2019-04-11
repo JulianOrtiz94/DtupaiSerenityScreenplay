@@ -68,9 +68,11 @@
 
     <script class="code" type="text/javascript">$(document).ready(function () {
 
+
         $('.scenario-result-table').DataTable({
+
             "order": [[0, "asc",], [3, "asc",]],
-            "pageLength": 10,
+            "pageLength": 25,
             "language": {
                 searchPlaceholder: "Filter",
                 search: ""
@@ -80,31 +82,12 @@
         // Results table
         $('#test-results-table').DataTable({
             "order": [[0, "asc",], [3, "asc",]],
-            "pageLength": 10,
-            "lengthMenu": [[10, 25, 50, 100, 200, -1], [10, 25, 50, 100, 200, "All"]]
+            "pageLength": 100,
+            "lengthMenu": [[25, 50, 100, 200, -1], [25, 50, 100, 200, "All"]]
         });
 
-        $('#evidence-table').DataTable({
-                    searching: false,
-                    paging: false,
-                    info: false
-        });
-
-        $(".feature-coverage-table").DataTable({
-            searching: false,
-            paging: false,
-            info: false
-        });
-
-        $(".feature-coverage-table-with-pagination").DataTable({
-            order: [[0, "asc",]],
-            pageLength: 10,
-            language: {
-                searchPlaceholder: "Filter",
-                search: ""
-            }
-        });
-    });
+    })
+    ;
     </script>
 </head>
 
@@ -120,9 +103,13 @@
 
 <div class="middlecontent">
 
+
     <div id="contenttop">
         <div class="middlebg">
         <span class="breadcrumbs"><a href="index.html">Home</a>
+                > Tag 
+                > <span
+                    class="truncate-60">Tres (Failing Tests)</span>
         </span>
         </div>
         <div class="rightbg"></div>
@@ -151,17 +138,24 @@
         <div class="middlb">
             <div class="table">
 
-                <h2>Test Results: All Tests</h2>
+                <h2><i class='fa fa-tags'></i> Tag: Tres (Failing Tests)</h2>
                 <table class='overview'>
                     <tr>
                         <td width="375px" valign="top">
                             <div class="test-count-summary">
-                                <div class="test-count-title">
-                                1 test scenarios 
-                                    (including 1 rows of test data)
-                                 |
-                                    <a href="results.csv" title="Download CSV"> <i class="fa fa-download"
-                                                                                    title="Download CSV"></i></a>
+                                <div>
+
+                                1 failing test
+                                    across 1 scenario
+
+                                     |
+                                        <a href="0dd5e3311cf8713a44abcc7bf09d6be84db971a150410eeefba71c0f8bdef142.csv" title="Download CSV"> <i class="fa fa-download"
+                                                                                        title="Download CSV"></i></a>
+
+                                    <p class="report-info"><i class="fas fa-info-circle"></i> Note that results include
+                                        data-driven scenarios containing failing test ,
+                                        which may also contain results other than failing test .</p>
+
 
 
                                 </div>
@@ -239,9 +233,7 @@
                                                         <table class="table">
                                                             <thead>
                                                             <tr>
-                                                                <th scope="col">Scenario Results (including rows of test
-                                                                    data)
-                                                                </th>
+                                                                <th scope="col">Scenarios</th>
                                                                 <th scope="col" colspan="2" class="automated-stats">
                                                                     Automated
                                                                 </th>
@@ -278,13 +270,13 @@
                                                             </tr>
                                                             <tr>
                                                                             <td colspan="3"><a
-                                                                                    href="b964a040ccee2192880812cc5de2c4d0075e3288c1b298b7dda0839367bb26be.html"><i
+                                                                                    href="c0a723e26f1f2b023a7075f4f640e3c5dd46b142bccce220bd6fe1326140f429.html"><i
                                                                                     class='fa fa-times failure-icon'></i>&nbsp;<em>Unsuccessful</em></a>
                                                                             </td>
                                                             </tr>
                                                             <tr>
                                                                     <td class="aggregate-result-count indented-error-category">
-                                                                        <a href="da5b0c51b332adf0ef993a9f086d6a1b51a3d800248ec6ae281212092f35bd37.html"><i
+                                                                        <a href="83890093725256f9ddd234eb67b285fb14060dde17797c33b310561396820137.html"><i
                                                                                 class='fa fa-times-circle failure-icon'></i>&nbsp;Failed</a>
                                                                     </td>
                                                                 <td class="automated-stats">1</td>
@@ -311,103 +303,6 @@
                                                             </tr>
                                                             </tbody>
                                                         </table>
-                                                    </div>
-                                                </div>
-
-                                                <div class="row">
-                                                    <div class="col-sm-12">
-                                                        <table class="table">
-                                                            <thead>
-                                                            <tr>
-                                                                <th>Execution Time</th>
-                                                                <th>Clock Time</th>
-                                                                <th>Fastest Test</th>
-                                                                <th>Slowest Test</th>
-                                                                <th>Average Execution Time</th>
-                                                            </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                            <tr>
-                                                                <td>45s</td>
-                                                                <td>45ms</td>
-                                                                <td>45s</td>
-                                                                <td>45s</td>
-                                                                <td>45s</td>
-                                                            </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-sm-12">
-                                                        <h3>Functional Coverage Overview</h3>
-
-
-                                                                <h4>Features</h4>
-
-                                                                <table class="table feature-coverage-table" id="Feature">
-                                                                    <thead>
-                                                                    <tr>
-                                                                        <th>Feature</th>
-                                                                        <th style="width:7.5em;">Scenarios</th>
-                                                                        <th style="width:7.5em;">% Pass</th>
-                                                                        <th style="width:7.5em;">Result</th>
-                                                                        <th>Coverage</th>
-                                                                    </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                        <tr>
-                                                                            <td>
-                                                                                    <a href="12980b4ef1f5d78a798fcc67a722b86c47e55dc9e4d9679139f6588ebe3f9d8f.html">A�ardir producto al carrito de compras</a>
-                                                                            </td>
-                                                                            <td>1</td>
-                                                                            <td>0%</td>
-                                                                            <td>
-                                                                                    <i class='fa fa-times-circle failure-icon ' title='FAILURE'></i>
-                                                                            </td>
-                                                                            <td>
-                                                                                <div class="progress">
-                                                                                        <div class="progress-bar"
-                                                                                             role="progressbar"
-                                                                                             style="width: 100%; background-color: #f8001f"
-                                                                                             aria-valuenow="1"
-                                                                                             title="100% failure"
-                                                                                             aria-valuemin="0"
-                                                                                             aria-valuemax="100">
-                                                                                        </div>
-                                                                                </div>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>
-                                                                                    Seleccionar un producto
-                                                                            </td>
-                                                                            <td>0</td>
-                                                                            <td>0%</td>
-                                                                            <td>
-                                                                                    <i class="fa fa-stop-circle-o pending-icon"></i>
-                                                                            </td>
-                                                                            <td>
-                                                                                <div class="progress">
-                                                                                </div>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>
-                                                                                    Buscar Producto
-                                                                            </td>
-                                                                            <td>0</td>
-                                                                            <td>0%</td>
-                                                                            <td>
-                                                                                    <i class="fa fa-stop-circle-o pending-icon"></i>
-                                                                            </td>
-                                                                            <td>
-                                                                                <div class="progress">
-                                                                                </div>
-                                                                            </td>
-                                                                        </tr>
-                                                                    </tbody>
-                                                                </table>
                                                     </div>
                                                 </div>
 
@@ -516,7 +411,6 @@
                                                 </div>
                                             </div>
                                         </div>
-
                         </td>
 
                     </tr>

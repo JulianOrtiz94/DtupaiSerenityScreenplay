@@ -34,7 +34,7 @@ public class SeleccionarProductoStepDefinition {
 	
 	@Given("^Daniel realizo la busqueda del producto$")
 	public void danielRealizoLaBusquedaDelProducto() throws Exception {
-		daniel.wasAbleTo(Open.browserOn(dtupaiResultPage));
+		//daniel.wasAbleTo(Open.browserOn(dtupaiResultPage));
 	}
 
 
