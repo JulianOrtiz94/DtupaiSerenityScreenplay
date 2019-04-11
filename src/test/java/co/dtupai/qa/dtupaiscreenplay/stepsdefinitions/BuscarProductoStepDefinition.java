@@ -12,7 +12,6 @@ import co.dtupai.qa.dtupaiscreenplay.models.Productos;
 import co.dtupai.qa.dtupaiscreenplay.questions.ResultadoBusqueda;
 import co.dtupai.qa.dtupaiscreenplay.task.BuscarProducto;
 import co.dtupai.qa.dtupaiscreenplay.userinterfaces.DtupaiHomePage;
-import co.dtupai.qa.dtupaiscreenplay.utils.Highlight;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;

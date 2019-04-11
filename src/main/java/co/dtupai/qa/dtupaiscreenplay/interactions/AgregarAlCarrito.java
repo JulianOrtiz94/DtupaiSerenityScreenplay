@@ -27,7 +27,7 @@ public class AgregarAlCarrito implements Interaction {
 	public <T extends Actor> void performAs(T actor) {
 		// TODO Auto-generated method stub
 		size.waitUntilClickable().click();
-		color.waitUntilClickable().click();
+		color.waitUntilClickable().click();		
 		DtupaiDetailProductPage.INPUT_QUANTITY.resolveFor(actor).clear();
 		DtupaiDetailProductPage.INPUT_QUANTITY.resolveFor(actor).sendKeys(cantidad);
 		DtupaiDetailProductPage.INPUT_QUANTITY.resolveFor(actor).submit();

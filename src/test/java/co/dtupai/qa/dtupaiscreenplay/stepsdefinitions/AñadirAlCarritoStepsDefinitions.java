@@ -22,7 +22,6 @@ import co.dtupai.qa.dtupaiscreenplay.task.SeleccionarProducto;
 import co.dtupai.qa.dtupaiscreenplay.userinterfaces.DtupaiDetailProductPage;
 import co.dtupai.qa.dtupaiscreenplay.userinterfaces.DtupaiResultPage;
 import co.dtupai.qa.dtupaiscreenplay.userinterfaces.DtupaiShoppingCartPage;
-import co.dtupai.qa.dtupaiscreenplay.utils.Highlight;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static org.hamcrest.core.Is.is;

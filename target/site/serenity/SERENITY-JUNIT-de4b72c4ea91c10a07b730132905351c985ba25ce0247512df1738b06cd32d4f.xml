@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="A�ardir producto al carrito de compras" skipped="0" tests="1" time="45.8" timestamp="2019-04-10 08:34:26"><testcase name="A�ardir producto al carrito de compras"><failure message="El precio del producto no coincide con el valor esperado - &#10;Expected: a string containing &quot;59.57&quot;&#10;     but: was &quot;€60.18&quot;" type="java.lang.AssertionError">El precio del producto no coincide con el valor esperado - 
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="A�ardir producto al carrito de compras" skipped="0" tests="1" time="39.22" timestamp="2019-04-11 08:54:21"><testcase name="A�ardir producto al carrito de compras"><failure message="El precio del producto no coincide con el valor esperado - &#10;Expected: a string containing &quot;59.57&quot;&#10;     but: was &quot;€60.18&quot;" type="java.lang.AssertionError">El precio del producto no coincide con el valor esperado - 
 Expected: a string containing "59.57"
      but: was "€60.18"</failure><system-err>El precio del producto no coincide con el valor esperado - 
 Expected: a string containing "59.57"
      but: was "€60.18"&#13;
-co.dtupai.qa.dtupaiscreenplay.stepsdefinitions.AñadirAlCarritoStepsDefinitions.danielVerificaQueElPrecioCorrespondeAlDelCarritoDeCompras(AñadirAlCarritoStepsDefinitions.java:59)&#13;
+co.dtupai.qa.dtupaiscreenplay.stepsdefinitions.AñadirAlCarritoStepsDefinitions.danielVerificaQueElPrecioCorrespondeAlDelCarritoDeCompras(AñadirAlCarritoStepsDefinitions.java:54)&#13;
 ✽.el verifica que el precio "59.57" corresponde al del carrito de compras(src/test/resources/features/AñadirProductoAlCarrito.feature:21)&#13;
 </system-err></testcase></testsuite>

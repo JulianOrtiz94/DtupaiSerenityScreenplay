@@ -6,7 +6,6 @@ import co.dtupai.qa.dtupaiscreenplay.exceptions.ProductoNoCoincide;
 import co.dtupai.qa.dtupaiscreenplay.questions.ElementoSeleccionado;
 import co.dtupai.qa.dtupaiscreenplay.task.SeleccionarProducto;
 import co.dtupai.qa.dtupaiscreenplay.userinterfaces.DtupaiResultPage;
-import co.dtupai.qa.dtupaiscreenplay.utils.Highlight;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -25,11 +24,9 @@ public class SeleccionarProductoStepDefinition {
 	private WebDriver hisBrowser;
 	private Actor daniel = Actor.named("Daniel");
 	private DtupaiResultPage dtupaiResultPage ;
-	private Highlight highlight ;
 	@Before
 	public void actorCanBrowseTheWeb() {
 		daniel.can(BrowseTheWeb.with(hisBrowser));
-		highlight = new Highlight(hisBrowser);
 	}
 	
 	@Given("^Daniel realizo la busqueda del producto$")
